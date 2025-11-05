@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusão Digital – Pacote Office</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== ESTILOS GLOBAIS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #2e7d32;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== CABEÇALHO E NAVEGAÇÃO ===== */
+        header {
+            background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* ===== SEÇÕES ===== */
+        section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #1b5e20;
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #43a047, #66bb6a);
+            border-radius: 2px;
+        }
+
+        /* ===== HOME ===== */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(46, 125, 50, 0.2);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #2e7d32, #66bb6a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #43a047, #66bb6a);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 160, 71, 0.3);
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(67, 160, 71, 0.5);
+        }
+
+        /* ===== COMANDO CARD ===== */
+        .command-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #43a047;
+            transition: all 0.3s ease;
+        }
+
+        .command-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 25px rgba(67, 160, 71, 0.3);
+        }
+
+        .command-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .command-icon {
+            font-size: 2.5rem;
+        }
+
+        .command-title {
+            font-size: 1.5rem;
+            color: #1b5e20;
+            font-weight: 700;
+        }
+
+        .command-shortcut {
+            background: linear-gradient(135deg, #43a047, #66bb6a);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: auto;
+        }
+
+        .command-description {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* ===== ÁREA DE DESAFIO ===== */
+        .challenge-area {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px dashed #43a047;
+        }
+
+        .challenge-title {
+            color: #2e7d32;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ===== EDITOR DE TEXTO INTERATIVO ===== */
+        .interactive-editor {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 150px;
+            font-size: 1.1rem;
+            outline: none;
+            margin-bottom: 1rem;
+        }
+
+        .interactive-editor:focus {
+            border-color: #43a047;
+        }
+
+        /* ===== PLANILHA INTERATIVA ===== */
+        .interactive-spreadsheet {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cell {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .cell:focus {
+            border-color: #43a047;
+            box-shadow: 0 0 10px rgba(67, 160, 71, 0.3);
+        }
+
+        .cell-header {
+            background: linear-gradient(135deg, #43a047, #66bb6a);
+            color: white;
+            font-weight: 600;
+        }
+
+        /* ===== ÁREA DE SLIDES ===== */
+        .slide-container {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 200px;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-content {
+            text-align: center;
+        }
+
+        .slide-title-input {
+            width: 100%;
+            font-size: 2rem;
+            border: none;
+            border-bottom: 2px solid #43a047;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            outline: none;
+            text-align: center;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .slide-text-input {
+            width: 100%;
+            font-size: 1.2rem;
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 100px;
+            outline: none;
+            resize: vertical;
+        }
+
+        .slide-text-input:focus {
+            border-color: #43a047;
+        }
+
+        /* ===== BOTÕES DE AÇÃO ===== */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, #66bb6a, #81c784);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 187, 106, 0.4);
+        }
+
+        .action-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ===== FEEDBACK ===== */
+        .feedback {
+            background: #c8e6c9;
+            color: #1b5e20;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+            font-weight: 600;
+        }
+
+        .feedback.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== SOBRE O PROJETO ===== */
+        .about-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #43a047;
+        }
+
+        .team-member strong {
+            color: #1b5e20;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .team-member small {
+            color: #555;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background: linear-gradient(135deg, #1b5e20, #2e7d32);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* ===== DICAS ===== */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #66bb6a, #81c784);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(102, 187, 106, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .tip-box:hover {
+            transform: scale(1.05);
+        }
+
+        .tip-box strong {
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 0.8rem;
+            }
+
+            .nav-links a {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .command-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .command-shortcut {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .command-card {
+                padding: 1.5rem;
+            }
+
+            .interactive-spreadsheet {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.3rem;
+            }
+
+            .cell {
+                padding: 0.6rem;
+                font-size: 0.9rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-list {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+
+            .about-content {
+                padding: 1.5rem;
+            }
+
+            .color-picker {
+                justify-content: center;
+            }
+
+            .slide-title-input {
+                font-size: 1.5rem;
+            }
+
+            .slide-text-input {
+                font-size: 1rem;
+            }
+
+            .interactive-editor {
+                font-size: 1rem;
+                min-height: 120px;
+            }
+
+            .draw-canvas {
+                max-width: 100%;
+                height: auto;
+            }
+
+            #canvasFormas {
+                width: 100%;
+                height: 250px;
+            }
+
+            #graficoExcel {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        /* ===== MELHORIAS PARA TOQUE ===== */
+        @media (hover: none) and (pointer: coarse) {
+            .action-btn {
+                min-height: 48px;
+                font-size: 1.1rem;
+            }
+
+            .nav-links a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .btn {
+                min-height: 50px;
+            }
+
+            .cell {
+                min-height: 44px;
+            }
+
+            .color-option {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* ===== ANIMAÇÕES ===== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== CANVAS PARA DESENHO ===== */
+        .draw-canvas {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: crosshair;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== SELETOR DE CORES ===== */
+        .color-picker {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option.active {
+            border-color: #2e7d32;
+            box-shadow: 0 0 10px rgba(46, 125, 50, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== CABEÇALHO ===== -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">🌱 Inclusão Digital</a>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#word">Word</a></li>
+                <li><a href="#excel">Excel</a></li>
+                <li><a href="#powerpoint">PowerPoint</a></li>
+                <li><a href="#dicas">Dicas</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== SEÇÃO HOME ===== -->
+    <section id="home">
+        <div class="hero floating">
+            <h1>🎓 Oficina de Inclusão Digital</h1>
+            <p>Bem-vindo ao site da Oficina de Inclusão Digital! Aqui você vai aprender a usar o Pacote Office praticando comandos e fazendo desafios interativos. Este projeto é uma parceria entre a Universidade e a Escola Brigadeiro Eduardo Gomes, em Boa Viagem, Recife-PE.</p>
+            <div class="button-group">
+                <a href="#word" class="btn">Praticar Word</a>
+                <a href="#excel" class="btn">Praticar Excel</a>
+                <a href="#powerpoint" class="btn">Praticar PowerPoint</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO WORD ===== -->
+    <section id="word">
+        <h2 class="section-title">📝 Microsoft Word - Comandos e Desafios</h2>
+
+        <!-- COMANDO 1: SALVAR -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">💾</span>
+                <h3 class="command-title">Salvar Documento</h3>
+                <span class="command-shortcut">Ctrl + S</span>
+            </div>
+            <p class="command-description">Use Ctrl + S para salvar seu trabalho e não perder nada!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Digite algo e pressione Ctrl + S</div>
+                <div contenteditable="true" class="interactive-editor" id="editor1" placeholder="Digite seu texto aqui...">Olá! Aperte Ctrl + S para salvar este texto.</div>
+                <div class="feedback" id="feedback1">✅ Ótimo! Você salvou o documento com sucesso!</div>
+            </div>
+        </div>
+
+        <!-- COMANDO 2: COPIAR -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">📋</span>
+                <h3 class="command-title">Copiar Texto</h3>
+                <span class="command-shortcut">Ctrl + C</span>
+            </div>
+            <p class="command-description">Selecione um texto e pressione Ctrl + C para copiar!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Selecione o texto abaixo e copie</div>
+                <div contenteditable="true" class="interactive-editor" id="editor2">Selecione este texto e pressione Ctrl + C para copiar!</div>
+                <div class="feedback" id="feedback2">✅ Texto copiado! Agora você pode colar em outro lugar.</div>
+            </div>
+        </div>
+
+        <!-- COMANDO 3: COLAR -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">📄</span>
+                <h3 class="command-title">Colar Texto</h3>
+                <span class="command-shortcut">Ctrl + V</span>
+            </div>
+            <p class="command-description">Depois de copiar, use Ctrl + V para colar o texto!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Cole algo aqui usando Ctrl + V</div>
+                <div contenteditable="true" class="interactive-editor" id="editor3" placeholder="Clique aqui e cole um texto com Ctrl + V"></div>
+                <div class="feedback" id="feedback3">✅ Perfeito! Você colou o texto com sucesso!</div>
+            </div>
+        </div>
+
+        <!-- COMANDO 4: DESFAZER -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">↩️</span>
+                <h3 class="command-title">Desfazer Ação</h3>
+                <span class="command-shortcut">Ctrl + Z</span>
+            </div>
+            <p class="command-description">Errou algo? Use Ctrl + Z para desfazer!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Digite algo, depois apague com Ctrl + Z</div>
+                <div contenteditable="true" class="interactive-editor" id="editor4" placeholder="Digite algo e depois use Ctrl + Z">Digite aqui e depois pressione Ctrl + Z para desfazer!</div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="demonstrarDesfazer()">🔄 Ver Demonstração</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMANDO 5: NEGRITO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">🔤</span>
+                <h3 class="command-title">Texto em Negrito</h3>
+                <span class="command-shortcut">Ctrl + B</span>
+            </div>
+            <p class="command-description">Selecione um texto e pressione Ctrl + B para deixar em negrito!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Selecione uma palavra e deixe em negrito</div>
+                <div contenteditable="true" class="interactive-editor" id="editor5">Selecione esta palavra e deixe em negrito usando Ctrl + B!</div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="aplicarNegrito()">🔨 Aplicar Negrito</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMANDO 6: ITÁLICO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">✍️</span>
+                <h3 class="command-title">Texto em Itálico</h3>
+                <span class="command-shortcut">Ctrl + I</span>
+            </div>
+            <p class="command-description">Selecione um texto e pressione Ctrl + I para deixar em itálico!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Deixe algum texto em itálico</div>
+                <div contenteditable="true" class="interactive-editor" id="editor6">Use Ctrl + I para deixar este texto em itálico!</div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="aplicarItalico()">📝 Aplicar Itálico</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMANDO 7: SUBLINHADO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">📏</span>
+                <h3 class="command-title">Texto Sublinhado</h3>
+                <span class="command-shortcut">Ctrl + U</span>
+            </div>
+            <p class="command-description">Selecione um texto e pressione Ctrl + U para sublinhar!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Sublinhe uma palavra importante</div>
+                <div contenteditable="true" class="interactive-editor" id="editor7">Selecione e pressione Ctrl + U para sublinhar!</div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="aplicarSublinhado()">➖ Aplicar Sublinhado</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMANDO 8: SELECIONAR TUDO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">🎯</span>
+                <h3 class="command-title">Selecionar Tudo</h3>
+                <span class="command-shortcut">Ctrl + A</span>
+            </div>
+            <p class="command-description">Use Ctrl + A para selecionar todo o texto de uma vez!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Pressione Ctrl + A para selecionar tudo</div>
+                <div contenteditable="true" class="interactive-editor" id="editor8">Este é um texto de exemplo. Pressione Ctrl + A para selecionar todo este conteúdo de uma vez! Depois você pode copiar ou formatar tudo junto.</div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="selecionarTudo()">✨ Selecionar Tudo</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMANDO 9: BUSCAR -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">🔍</span>
+                <h3 class="command-title">Buscar Palavra</h3>
+                <span class="command-shortcut">Ctrl + F</span>
+            </div>
+            <p class="command-description">Use Ctrl + F para encontrar palavras específicas no seu texto!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Busque a palavra "computador" no texto</div>
+                <div class="interactive-editor">A inclusão digital é muito importante. Aprender a usar o computador abre muitas portas. Com o computador, você pode estudar, trabalhar e se comunicar.</div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="buscarPalavra()">🔎 Buscar "computador"</button>
+                </div>
+                <div class="feedback" id="feedback9"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 10: IMPRIMIR -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">🖨️</span>
+                <h3 class="command-title">Imprimir Documento</h3>
+                <span class="command-shortcut">Ctrl + P</span>
+            </div>
+            <p class="command-description">Use Ctrl + P quando quiser imprimir seu trabalho!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Clique no botão para simular impressão</div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="simularImpressao()">🖨️ Simular Impressão (Ctrl + P)</button>
+                </div>
+                <div class="feedback" id="feedback10"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO EXCEL ===== -->
+    <section id="excel">
+        <h2 class="section-title">📊 Microsoft Excel - Comandos e Desafios</h2>
+
+        <!-- COMANDO 1: INSERIR DADOS -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">✏️</span>
+                <h3 class="command-title">Inserir Dados nas Células</h3>
+                <span class="command-shortcut">Clique e digite</span>
+            </div>
+            <p class="command-description">Clique em uma célula e digite para adicionar informações!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Preencha a planilha com seus dados</div>
+                <div class="interactive-spreadsheet">
+                    <div class="cell cell-header">Nome</div>
+                    <div class="cell cell-header">Idade</div>
+                    <div class="cell cell-header">Série</div>
+                    <div class="cell cell-header">Nota</div>
+                    <input type="text" class="cell" placeholder="Digite nome">
+                    <input type="text" class="cell" placeholder="Digite idade">
+                    <input type="text" class="cell" placeholder="Digite série">
+                    <input type="text" class="cell" placeholder="Digite nota">
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="verificarDados()">✅ Verificar Dados</button>
+                </div>
+                <div class="feedback" id="feedbackExcel1"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 2: FÓRMULA SOMA -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">➕</span>
+                <h3 class="command-title">Fórmula SOMA</h3>
+                <span class="command-shortcut">=SOMA()</span>
+            </div>
+            <p class="command-description">Use =SOMA() para somar números automaticamente!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Calcule a soma dos números</div>
+                <div class="interactive-spreadsheet">
+                    <div class="cell cell-header">A</div>
+                    <div class="cell cell-header">B</div>
+                    <div class="cell cell-header">C</div>
+                    <div class="cell cell-header">Total</div>
+                    <div class="cell">10</div>
+                    <div class="cell">20</div>
+                    <div class="cell">30</div>
+                    <input type="text" class="cell" id="resultadoSoma" placeholder="=SOMA()">
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="calcularSoma()">🧮 Calcular Soma</button>
+                </div>
+                <div class="feedback" id="feedbackExcel2"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 3: FÓRMULA MÉDIA -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">📊</span>
+                <h3 class="command-title">Fórmula MÉDIA</h3>
+                <span class="command-shortcut">=MÉDIA()</span>
+            </div>
+            <p class="command-description">Use =MÉDIA() para calcular a média de números!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Calcule a média das notas</div>
+                <div class="interactive-spreadsheet">
+                    <div class="cell cell-header">Nota 1</div>
+                    <div class="cell cell-header">Nota 2</div>
+                    <div class="cell cell-header">Nota 3</div>
+                    <div class="cell cell-header">Média</div>
+                    <div class="cell">8</div>
+                    <div class="cell">7</div>
+                    <div class="cell">9</div>
+                    <input type="text" class="cell" id="resultadoMedia" placeholder="=MÉDIA()">
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="calcularMedia()">📐 Calcular Média</button>
+                </div>
+                <div class="feedback" id="feedbackExcel3"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 4: MULTIPLICAÇÃO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">✖️</span>
+                <h3 class="command-title">Multiplicação Simples</h3>
+                <span class="command-shortcut">=A1*B1</span>
+            </div>
+            <p class="command-description">Use * para multiplicar valores de diferentes células!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Calcule o preço total (Quantidade × Preço)</div>
+                <div class="interactive-spreadsheet">
+                    <div class="cell cell-header">Produto</div>
+                    <div class="cell cell-header">Quantidade</div>
+                    <div class="cell cell-header">Preço</div>
+                    <div class="cell cell-header">Total</div>
+                    <div class="cell">Caderno</div>
+                    <div class="cell">5</div>
+                    <div class="cell">12</div>
+                    <input type="text" class="cell" id="resultadoMult" placeholder="=B*C">
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="calcularMultiplicacao()">🔢 Calcular Total</button>
+                </div>
+                <div class="feedback" id="feedbackExcel4"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 5: ORDENAR DADOS -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">🔀</span>
+                <h3 class="command-title">Ordenar Dados</h3>
+                <span class="command-shortcut">Dados → Ordenar</span>
+            </div>
+            <p class="command-description">Organize seus dados em ordem crescente ou decrescente!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Organize os números em ordem</div>
+                <div class="interactive-spreadsheet" id="listaDesordenada">
+                    <div class="cell">42</div>
+                    <div class="cell">15</div>
+                    <div class="cell">89</div>
+                    <div class="cell">7</div>
+                    <div class="cell">23</div>
+                    <div class="cell">61</div>
+                    <div class="cell">34</div>
+                    <div class="cell">98</div>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="ordenarCrescente()">⬆️ Ordem Crescente</button>
+                    <button class="action-btn" onclick="ordenarDecrescente()">⬇️ Ordem Decrescente</button>
+                </div>
+                <div class="feedback" id="feedbackExcel5"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 6: CRIAR GRÁFICO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">📈</span>
+                <h3 class="command-title">Criar Gráficos</h3>
+                <span class="command-shortcut">Inserir → Gráfico</span>
+            </div>
+            <p class="command-description">Transforme seus dados em gráficos visuais!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Veja os dados em forma de gráfico</div>
+                <canvas id="graficoExcel" width="400" height="200" style="max-width: 100%; background: white; border-radius: 8px;"></canvas>
+                <div class="action-buttons" style="margin-top: 1rem;">
+                    <button class="action-btn" onclick="criarGrafico()">📊 Criar Gráfico</button>
+                </div>
+                <div class="feedback" id="feedbackExcel6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO POWERPOINT ===== -->
+    <section id="powerpoint">
+        <h2 class="section-title">🎬 Microsoft PowerPoint - Comandos e Desafios</h2>
+
+        <!-- COMANDO 1: CRIAR NOVO SLIDE -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">➕</span>
+                <h3 class="command-title">Criar Novo Slide</h3>
+                <span class="command-shortcut">Ctrl + M</span>
+            </div>
+            <p class="command-description">Use Ctrl + M para adicionar um novo slide à apresentação!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Crie slides para sua apresentação</div>
+                <div id="slideCounter" style="text-align: center; font-size: 1.5rem; font-weight: 600; color: #2e7d32; margin-bottom: 1rem;">
+                    Total de Slides: 1
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="adicionarSlide()">➕ Adicionar Slide (Ctrl + M)</button>
+                    <button class="action-btn" onclick="removerSlide()">➖ Remover Slide</button>
+                </div>
+                <div class="feedback" id="feedbackPPT1"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 2: EDITAR TÍTULO E TEXTO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">✏️</span>
+                <h3 class="command-title">Adicionar Título e Texto</h3>
+                <span class="command-shortcut">Clique e digite</span>
+            </div>
+            <p class="command-description">Clique nas caixas de texto para adicionar conteúdo aos seus slides!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Crie um slide sobre seu tema favorito</div>
+                <div class="slide-container">
+                    <div class="slide-content">
+                        <input type="text" class="slide-title-input" placeholder="Digite o título do slide aqui..." id="slideTitle">
+                        <textarea class="slide-text-input" placeholder="Digite o conteúdo do slide aqui..." id="slideText"></textarea>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="salvarSlide()">💾 Salvar Slide</button>
+                </div>
+                <div class="feedback" id="feedbackPPT2"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 3: MUDAR COR DE FUNDO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">🎨</span>
+                <h3 class="command-title">Mudar Cor de Fundo</h3>
+                <span class="command-shortcut">Design → Cor de Fundo</span>
+            </div>
+            <p class="command-description">Deixe seus slides mais bonitos mudando a cor de fundo!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Escolha uma cor para o fundo do slide</div>
+                <div class="slide-container" id="slideColorido" style="background: white;">
+                    <div class="slide-content">
+                        <h2 style="color: #2e7d32;">Meu Slide Colorido</h2>
+                        <p>Escolha uma cor ao lado!</p>
+                    </div>
+                </div>
+                <div class="color-picker">
+                    <div class="color-option" style="background: #e3f2fd;" onclick="mudarCorFundo('#e3f2fd')"></div>
+                    <div class="color-option" style="background: #ffe0b2;" onclick="mudarCorFundo('#ffe0b2')"></div>
+                    <div class="color-option" style="background: #f3e5f5;" onclick="mudarCorFundo('#f3e5f5')"></div>
+                    <div class="color-option" style="background: #c8e6c9;" onclick="mudarCorFundo('#c8e6c9')"></div>
+                    <div class="color-option" style="background: #ffcdd2;" onclick="mudarCorFundo('#ffcdd2')"></div>
+                    <div class="color-option" style="background: #fff9c4;" onclick="mudarCorFundo('#fff9c4')"></div>
+                </div>
+                <div class="feedback" id="feedbackPPT3"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 4: INSERIR FORMAS -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">🔷</span>
+                <h3 class="command-title">Inserir Formas</h3>
+                <span class="command-shortcut">Inserir → Formas</span>
+            </div>
+            <p class="command-description">Adicione formas geométricas para deixar sua apresentação mais visual!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Desenhe formas no slide</div>
+                <canvas id="canvasFormas" width="600" height="300" class="draw-canvas"></canvas>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="desenharCirculo()">⭕ Círculo</button>
+                    <button class="action-btn" onclick="desenharQuadrado()">🟦 Quadrado</button>
+                    <button class="action-btn" onclick="desenharTriangulo()">🔺 Triângulo</button>
+                    <button class="action-btn" onclick="limparCanvas()">🗑️ Limpar</button>
+                </div>
+                <div class="feedback" id="feedbackPPT4"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 5: ADICIONAR TRANSIÇÕES -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">✨</span>
+                <h3 class="command-title">Adicionar Transições</h3>
+                <span class="command-shortcut">Transições → Escolher Efeito</span>
+            </div>
+            <p class="command-description">Transições fazem seus slides mudarem com efeitos legais!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Teste diferentes transições</div>
+                <div class="slide-container" id="slideTransicao" style="transition: all 0.5s ease;">
+                    <div class="slide-content">
+                        <h2 style="color: #2e7d32;">Slide com Transição</h2>
+                        <p>Clique nos botões para ver os efeitos!</p>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="aplicarTransicao('fade')">🌫️ Fade</button>
+                    <button class="action-btn" onclick="aplicarTransicao('slide')">➡️ Deslizar</button>
+                    <button class="action-btn" onclick="aplicarTransicao('zoom')">🔍 Zoom</button>
+                </div>
+                <div class="feedback" id="feedbackPPT5"></div>
+            </div>
+        </div>
+
+        <!-- COMANDO 6: MODO APRESENTAÇÃO -->
+        <div class="command-card">
+            <div class="command-header">
+                <span class="command-icon">🎥</span>
+                <h3 class="command-title">Iniciar Apresentação</h3>
+                <span class="command-shortcut">F5</span>
+            </div>
+            <p class="command-description">Pressione F5 para iniciar sua apresentação em tela cheia!</p>
+            <div class="challenge-area">
+                <div class="challenge-title">🎯 Desafio: Simule o modo apresentação</div>
+                <div class="action-buttons">
+                    <button class="action-btn" onclick="iniciarApresentacao()">▶️ Iniciar Apresentação (F5)</button>
+                </div>
+                <div class="feedback" id="feedbackPPT6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO DICAS ===== -->
+    <section id="dicas">
+        <h2 class="section-title">💡 Dicas e Atalhos Gerais</h2>
+        <div class="tips-grid">
+            <div class="tip-box">
+                <strong>Ctrl + S</strong>
+                Salvar documento
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + C</strong>
+                Copiar texto ou imagem
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + V</strong>
+                Colar o que foi copiado
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + Z</strong>
+                Desfazer última ação
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + Y</strong>
+                Refazer ação desfeita
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + P</strong>
+                Imprimir documento
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + A</strong>
+                Selecionar tudo
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + F</strong>
+                Buscar palavra no texto
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + B</strong>
+                Texto em negrito
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + I</strong>
+                Texto em itálico
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + U</strong>
+                Texto sublinhado
+            </div>
+            <div class="tip-box">
+                <strong>Ctrl + M</strong>
+                Novo slide (PowerPoint)
+            </div>
+        </div>
+        
+        <div class="about-content" style="margin-top: 3rem;">
+            <h3 style="color: #2e7d32; font-size: 1.8rem; margin-bottom: 1rem;">🎓 Boas Práticas Digitais</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 0.8rem 0; padding-left: 2rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: #43a047; font-weight: bold;">📁</span>
+                    Organize seus arquivos em pastas com nomes claros
+                </li>
+                <li style="padding: 0.8rem 0; padding-left: 2rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: #43a047; font-weight: bold;">💾</span>
+                    Salve sempre seus trabalhos para não perder nada
+                </li>
+                <li style="padding: 0.8rem 0; padding-left: 2rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: #43a047; font-weight: bold;">📝</span>
+                    Use nomes descritivos: "Trabalho_Geografia_Nov2024"
+                </li>
+                <li style="padding: 0.8rem 0; padding-left: 2rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: #43a047; font-weight: bold;">🔒</span>
+                    Faça backup dos arquivos importantes em pen drive
+                </li>
+                <li style="padding: 0.8rem 0; padding-left: 2rem; position: relative;">
+                    <span style="position: absolute; left: 0; color: #43a047; font-weight: bold;">⚡</span>
+                    Aprenda os atalhos do teclado para trabalhar mais rápido
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===== SEÇÃO SOBRE O PROJETO ===== -->
+    <section id="sobre">
+        <h2 class="section-title">🌟 Sobre o Projeto</h2>
+        <div class="about-content">
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Este site foi desenvolvido como parte de um projeto de extensão universitária realizado por estudantes dos cursos de Ciência da Computação e Engenharia da Computação da Universidade, em parceria com a <strong>Escola Brigadeiro Eduardo Gomes</strong>, localizada em Boa Viagem, Recife-PE.</p>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">O objetivo principal é promover a <strong>inclusão digital</strong> e capacitar os alunos do ensino fundamental a utilizarem o Pacote Office de forma eficiente, desenvolvendo habilidades essenciais para o mundo acadêmico e profissional.</p>
+
+            <h3 style="color: #2e7d32; font-size: 1.8rem; margin: 2rem 0 1rem;">👨‍💻 Equipe do Projeto</h3>
+            
+            <div class="team-list">
+                <div class="team-member">
+                    <strong>Andressa Valéria Cardoso dos Santos</strong>
+                    <small>Matrícula: 01249591 - Engenharia da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Dennys Gabriel Ezequiel de Oliveira</strong>
+                    <small>Matrícula: 01806494 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Gustavo Borges dos Santos</strong>
+                    <small>Matrícula: 01783424 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Guilherme da Silva Marano</strong>
+                    <small>Matrícula: 01818473 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Letícia Albuquerque Vila Nova da Silva</strong>
+                    <small>Matrícula: 01836386 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Lucas Alves Ferreira da Silva</strong>
+                    <small>Matrícula: 01814309 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Lucas Henrique Leite de Lima</strong>
+                    <small>Matrícula: 01814476 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Malcolm Barros Silva</strong>
+                    <small>Matrícula: 01793375 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Pedro Henrique Gomes de Lima</strong>
+                    <small>Matrícula: 01822744 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Rafael Falcão Carvalho Gonçalves</strong>
+                    <small>Matrícula: 01670012 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Sérgio Veloso Cavalcanti</strong>
+                    <small>Matrícula: 01796288 - Ciência da Computação</small>
+                </div>
+                <div class="team-member">
+                    <strong>Victor Augusto Pereira Lira</strong>
+                    <small>Matrícula: 01825974 - Ciência da Computação</small>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 15px;">
+                <h3 style="color: #1b5e20; font-size: 1.5rem; margin-bottom: 1rem;">🙏 Agradecimentos</h3>
+                <p style="font-size: 1.1rem;">Agradecemos à coordenação da <strong>Escola Brigadeiro Eduardo Gomes</strong> pela parceria e confiança neste projeto, e especialmente à <strong>Professora Ingrid</strong> pelo apoio e dedicação ao desenvolvimento educacional dos alunos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer>
+        <p style="font-size: 1.2rem; margin-bottom: 1rem;">🌱 Projeto de Extensão Universitária</p>
+        <p>Universidade × Escola Brigadeiro Eduardo Gomes</p>
+        <p>Boa Viagem, Recife-PE</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">© 2024 - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- ===== JAVASCRIPT PARA INTERATIVIDADE ===== -->
+    <script>
+        // ===== VARIÁVEIS GLOBAIS =====
+        let slideCount = 1;
+        let canvas, ctx;
+
+        // ===== WORD - DETECTAR CTRL + S =====
+        document.getElementById('editor1').addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                document.getElementById('feedback1').classList.add('show');
+                setTimeout(() => {
+                    document.getElementById('feedback1').classList.remove('show');
+                }, 3000);
+            }
+        });
+
+        // ===== WORD - DETECTAR CTRL + C =====
+        document.getElementById('editor2').addEventListener('copy', function() {
+            document.getElementById('feedback2').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('feedback2').classList.remove('show');
+            }, 3000);
+        });
+
+        // ===== WORD - DETECTAR CTRL + V =====
+        document.getElementById('editor3').addEventListener('paste', function() {
+            document.getElementById('feedback3').classList.add('show');
+            setTimeout(() => {
+                document.getElementById('feedback3').classList.remove('show');
+            }, 3000);
+        });
+
+        // ===== WORD - DEMONSTRAR DESFAZER =====
+        function demonstrarDesfazer() {
+            const editor = document.getElementById('editor4');
+            editor.textContent = 'Agora pressione Ctrl + Z para desfazer!';
+            alert('💡 Dica: Digite algo no editor e depois pressione Ctrl + Z para desfazer a digitação!');
+        }
+
+        // ===== WORD - APLICAR NEGRITO =====
+        function aplicarNegrito() {
+            document.execCommand('bold');
+            alert('✅ Negrito aplicado! No Word real, você usaria Ctrl + B após selecionar o texto.');
+        }
+
+        // ===== WORD - APLICAR ITÁLICO =====
+        function aplicarItalico() {
+            document.execCommand('italic');
+            alert('✅ Itálico aplicado! No Word real, você usaria Ctrl + I após selecionar o texto.');
+        }
+
+        // ===== WORD - APLICAR SUBLINHADO =====
+        function aplicarSublinhado() {
+            document.execCommand('underline');
+            alert('✅ Sublinhado aplicado! No Word real, você usaria Ctrl + U após selecionar o texto.');
+        }
+
+        // ===== WORD - SELECIONAR TUDO =====
+        function selecionarTudo() {
+            const editor = document.getElementById('editor8');
+            const range = document.createRange();
+            range.selectNodeContents(editor);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            alert('✅ Todo o texto foi selecionado! No Word, você usaria Ctrl + A.');
+        }
+
+        // ===== WORD - BUSCAR PALAVRA =====
+        function buscarPalavra() {
+            const feedback = document.getElementById('feedback9');
+            feedback.textContent = '🔍 Encontradas 3 ocorrências da palavra "computador" no texto!';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 4000);
+        }
+
+        // ===== WORD - SIMULAR IMPRESSÃO =====
+        function simularImpressao() {
+            const feedback = document.getElementById('feedback10');
+            feedback.textContent = '🖨️ Janela de impressão aberta! No Word real, você veria as opções de impressora.';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 4000);
+        }
+
+        // ===== EXCEL - VERIFICAR DADOS =====
+        function verificarDados() {
+            const cells = document.querySelectorAll('#feedbackExcel1').length ? [] : document.querySelectorAll('.interactive-spreadsheet input');
+            let preenchidos = 0;
+            cells.forEach(cell => {
+                if (cell.value.trim() !== '') preenchidos++;
+            });
+            
+            const feedback = document.getElementById('feedbackExcel1');
+            if (preenchidos > 0) {
+                feedback.textContent = `✅ Ótimo! Você preencheu ${preenchidos} campo(s) da planilha!`;
+                feedback.classList.add('show');
+            } else {
+                feedback.textContent = '⚠️ Preencha pelo menos um campo!';
+                feedback.classList.add('show');
+            }
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== EXCEL - CALCULAR SOMA =====
+        function calcularSoma() {
+            const resultado = document.getElementById('resultadoSoma');
+            resultado.value = '60';
+            const feedback = document.getElementById('feedbackExcel2');
+            feedback.textContent = '✅ Perfeito! A soma de 10 + 20 + 30 = 60';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== EXCEL - CALCULAR MÉDIA =====
+        function calcularMedia() {
+            const resultado = document.getElementById('resultadoMedia');
+            resultado.value = '8';
+            const feedback = document.getElementById('feedbackExcel3');
+            feedback.textContent = '✅ Excelente! A média de 8, 7 e 9 é 8';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== EXCEL - CALCULAR MULTIPLICAÇÃO =====
+        function calcularMultiplicacao() {
+            const resultado = document.getElementById('resultadoMult');
+            resultado.value = '60';
+            const feedback = document.getElementById('feedbackExcel4');
+            feedback.textContent = '✅ Correto! 5 × 12 = R$ 60,00';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== EXCEL - ORDENAR CRESCENTE =====
+        function ordenarCrescente() {
+            const container = document.getElementById('listaDesordenada');
+            const valores = Array.from(container.children).map(el => parseInt(el.textContent));
+            valores.sort((a, b) => a - b);
+            container.innerHTML = '';
+            valores.forEach(val => {
+                const div = document.createElement('div');
+                div.className = 'cell';
+                div.textContent = val;
+                container.appendChild(div);
+            });
+            const feedback = document.getElementById('feedbackExcel5');
+            feedback.textContent = '✅ Dados organizados em ordem crescente!';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== EXCEL - ORDENAR DECRESCENTE =====
+        function ordenarDecrescente() {
+            const container = document.getElementById('listaDesordenada');
+            const valores = Array.from(container.children).map(el => parseInt(el.textContent));
+            valores.sort((a, b) => b - a);
+            container.innerHTML = '';
+            valores.forEach(val => {
+                const div = document.createElement('div');
+                div.className = 'cell';
+                div.textContent = val;
+                container.appendChild(div);
+            });
+            const feedback = document.getElementById('feedbackExcel5');
+            feedback.textContent = '✅ Dados organizados em ordem decrescente!';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== EXCEL - CRIAR GRÁFICO =====
+        function criarGrafico() {
+            const canvas = document.getElementById('graficoExcel');
+            const ctx = canvas.getContext('2d');
+            
+            // Limpar canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Dados do gráfico
+            const dados = [30, 50, 80, 45, 70];
+            const cores = ['#43a047', '#66bb6a', '#81c784', '#a5d6a7', '#c8e6c9'];
+            const labels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai'];
+            
+            // Desenhar barras
+            const larguraBarra = 60;
+            const espacamento = 20;
+            const alturaMax = 150;
+            
+            dados.forEach((valor, i) => {
+                const altura = (valor / 100) * alturaMax;
+                const x = i * (larguraBarra + espacamento) + 30;
+                const y = canvas.height - altura - 30;
+                
+                // Desenhar barra
+                ctx.fillStyle = cores[i];
+                ctx.fillRect(x, y, larguraBarra, altura);
+                
+                // Desenhar valor
+                ctx.fillStyle = '#2e7d32';
+                ctx.font = 'bold 14px Poppins';
+                ctx.textAlign = 'center';
+                ctx.fillText(valor, x + larguraBarra/2, y - 5);
+                
+                // Desenhar label
+                ctx.fillText(labels[i], x + larguraBarra/2, canvas.height - 10);
+            });
+            
+            const feedback = document.getElementById('feedbackExcel6');
+            feedback.textContent = '📊 Gráfico criado com sucesso! No Excel, você teria mais opções de personalização.';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 4000);
+        }
+
+        // ===== POWERPOINT - ADICIONAR SLIDE =====
+        function adicionarSlide() {
+            slideCount++;
+            document.getElementById('slideCounter').textContent = `Total de Slides: ${slideCount}`;
+            const feedback = document.getElementById('feedbackPPT1');
+            feedback.textContent = `✅ Novo slide adicionado! Total: ${slideCount} slides`;
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== POWERPOINT - REMOVER SLIDE =====
+        function removerSlide() {
+            if (slideCount > 1) {
+                slideCount--;
+                document.getElementById('slideCounter').textContent = `Total de Slides: ${slideCount}`;
+                const feedback = document.getElementById('feedbackPPT1');
+                feedback.textContent = `➖ Slide removido! Total: ${slideCount} slides`;
+                feedback.classList.add('show');
+                setTimeout(() => {
+                    feedback.classList.remove('show');
+                }, 3000);
+            } else {
+                alert('⚠️ Você precisa ter pelo menos 1 slide na apresentação!');
+            }
+        }
+
+        // ===== POWERPOINT - SALVAR SLIDE =====
+        function salvarSlide() {
+            const titulo = document.getElementById('slideTitle').value;
+            const texto = document.getElementById('slideText').value;
+            
+            const feedback = document.getElementById('feedbackPPT2');
+            if (titulo && texto) {
+                feedback.textContent = `✅ Slide salvo com sucesso! Título: "${titulo}"`;
+            } else if (titulo || texto) {
+                feedback.textContent = '⚠️ Preencha o título e o texto para um slide completo!';
+            } else {
+                feedback.textContent = '⚠️ Adicione conteúdo ao slide antes de salvar!';
+            }
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== POWERPOINT - MUDAR COR DE FUNDO =====
+        function mudarCorFundo(cor) {
+            document.getElementById('slideColorido').style.background = cor;
+            
+            // Remover active de todas as opções
+            document.querySelectorAll('.color-option').forEach(opt => {
+                opt.classList.remove('active');
+            });
+            
+            // Adicionar active à cor selecionada
+            event.target.classList.add('active');
+            
+            const feedback = document.getElementById('feedbackPPT3');
+            feedback.textContent = '🎨 Cor de fundo alterada com sucesso!';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== POWERPOINT - DESENHAR NO CANVAS =====
+        window.onload = function() {
+            canvas = document.getElementById('canvasFormas');
+            ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        };
+
+        // ===== POWERPOINT - DESENHAR CÍRCULO =====
+        function desenharCirculo() {
+            const x = Math.random() * (canvas.width - 100) + 50;
+            const y = Math.random() * (canvas.height - 100) + 50;
+            const raio = 40;
+            
+            ctx.fillStyle = '#43a047';
+            ctx.beginPath();
+            ctx.arc(x, y, raio, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            const feedback = document.getElementById('feedbackPPT4');
+            feedback.textContent = '⭕ Círculo adicionado!';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 2000);
+        }
+
+        // ===== POWERPOINT - DESENHAR QUADRADO =====
+        function desenharQuadrado() {
+            const x = Math.random() * (canvas.width - 100) + 20;
+            const y = Math.random() * (canvas.height - 100) + 20;
+            const tamanho = 80;
+            
+            ctx.fillStyle = '#66bb6a';
+            ctx.fillRect(x, y, tamanho, tamanho);
+            
+            const feedback = document.getElementById('feedbackPPT4');
+            feedback.textContent = '🟦 Quadrado adicionado!';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 2000);
+        }
+
+        // ===== POWERPOINT - DESENHAR TRIÂNGULO =====
+        function desenharTriangulo() {
+            const x = Math.random() * (canvas.width - 100) + 50;
+            const y = Math.random() * (canvas.height - 100) + 50;
+            
+            ctx.fillStyle = '#81c784';
+            ctx.beginPath();
+            ctx.moveTo(x, y - 40);
+            ctx.lineTo(x - 40, y + 40);
+            ctx.lineTo(x + 40, y + 40);
+            ctx.closePath();
+            ctx.fill();
+            
+            const feedback = document.getElementById('feedbackPPT4');
+            feedback.textContent = '🔺 Triângulo adicionado!';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 2000);
+        }
+
+        // ===== POWERPOINT - LIMPAR CANVAS =====
+        function limparCanvas() {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const feedback = document.getElementById('feedbackPPT4');
+            feedback.textContent = '🗑️ Canvas limpo!';
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 2000);
+        }
+
+        // ===== POWERPOINT - APLICAR TRANSIÇÃO =====
+        function aplicarTransicao(tipo) {
+            const slide = document.getElementById('slideTransicao');
+            
+            // Resetar
+            slide.style.opacity = '1';
+            slide.style.transform = 'scale(1) translateX(0)';
+            
+            if (tipo === 'fade') {
+                slide.style.opacity = '0';
+                setTimeout(() => {
+                    slide.style.transition = 'opacity 1s ease';
+                    slide.style.opacity = '1';
+                }, 100);
+            } else if (tipo === 'slide') {
+                slide.style.transform = 'translateX(-100%)';
+                setTimeout(() => {
+                    slide.style.transition = 'transform 0.8s ease';
+                    slide.style.transform = 'translateX(0)';
+                }, 100);
+            } else if (tipo === 'zoom') {
+                slide.style.transform = 'scale(0)';
+                setTimeout(() => {
+                    slide.style.transition = 'transform 0.6s ease';
+                    slide.style.transform = 'scale(1)';
+                }, 100);
+            }
+            
+            const feedback = document.getElementById('feedbackPPT5');
+            feedback.textContent = `✨ Transição "${tipo}" aplicada!`;
+            feedback.classList.add('show');
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+
+        // ===== POWERPOINT - INICIAR APRESENTAÇÃO =====
+        function iniciarApresentacao() {
+            const feedback = document.getElementById('feedbackPPT6');
+            feedback.textContent = '▶️ Modo apresentação iniciado! No PowerPoint real, sua apresentação seria exibida em tela cheia. Pressione ESC para sair.';
+            feedback.classList.add('show');
+            
+            // Simular tela cheia
+            alert('🎥 Apresentação iniciada!\n\n💡 Dica: No PowerPoint real:\n• F5 inicia do primeiro slide\n• Shift + F5 inicia do slide atual\n• ESC sai da apresentação\n• Setas navegam entre slides');
+            
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 5000);
+        }
+
+        // ===== ROLAGEM SUAVE =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ===== ANIMAÇÃO DE ENTRADA PARA OS CARDS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(30px)';
+                    
+                    setTimeout(() => {
+                        entry.target.style.transition = 'all 0.6s ease';
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os cards
+        document.querySelectorAll('.command-card, .tip-box, .team-member').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ===== EFEITO DE DESTAQUE AO PASSAR O MOUSE =====
+        document.querySelectorAll('.tip-box').forEach(tip => {
+            tip.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) rotate(2deg)';
+            });
+            tip.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+
+        // ===== MENSAGEM DE BOAS-VINDAS NO CONSOLE =====
+        console.log('🌱 Bem-vindo ao site da Oficina de Inclusão Digital!');
+        console.log('💚 Desenvolvido com carinho pela equipe da Universidade');
+        console.log('📚 Pratique os comandos e aprenda o Pacote Office!');
+
+        // ===== DETECTAR TECLA F5 =====
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F5') {
+                e.preventDefault();
+                if (window.location.hash === '#powerpoint') {
+                    iniciarApresentacao();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
