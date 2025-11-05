@@ -19,6 +19,14 @@
             color: #2e7d32;
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            overflow-x: hidden;
+            width: 100%;
         }
 
         /* ===== CABEÇALHO E NAVEGAÇÃO ===== */
@@ -1604,6 +1612,13 @@
         window.onload = function() {
             canvas = document.getElementById('canvasFormas');
             ctx = canvas.getContext('2d');
+            
+            // Ajustar canvas para mobile
+            if (window.innerWidth < 768) {
+                canvas.width = window.innerWidth - 60;
+                canvas.height = 250;
+            }
+            
             ctx.fillStyle = 'white';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         };
@@ -1794,6 +1809,26 @@
                 }
             }
         });
+
+        // ===== AJUSTAR CANVAS NO REDIMENSIONAMENTO =====
+        window.addEventListener('resize', function() {
+            if (canvas) {
+                const novaLargura = window.innerWidth < 768 ? window.innerWidth - 60 : 600;
+                const novaAltura = window.innerWidth < 768 ? 250 : 300;
+                
+                if (canvas.width !== novaLargura || canvas.height !== novaAltura) {
+                    canvas.width = novaLargura;
+                    canvas.height = novaAltura;
+                    ctx.fillStyle = 'white';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+        });
+
+        // ===== MENSAGEM ESPECIAL PARA MOBILE =====
+        if (window.innerWidth < 768) {
+            console.log('📱 Versão mobile otimizada! Todos os comandos funcionam perfeitamente no celular.');
+        }
     </script>
 </body>
 </html>
